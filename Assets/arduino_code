@@ -1,0 +1,19 @@
+// creating vars
+const int buttonPin = 2;  // the number of the pushbutton pin
+
+void setup() {
+  Serial.begin(9600);
+  // init button as an input
+  pinMode(buttonPin, INPUT);
+}
+
+void loop() {
+  // read the state of the button
+  bool buttonState = digitalRead(buttonPin);
+  
+  // print btn state to serial port
+  Serial.println(buttonState);
+  
+  // slight delay
+  delay(100);
+}
