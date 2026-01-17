@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using System.Drawing;
+using UnityEngine;
 
 
 public class boxOpen : MonoBehaviour
@@ -11,6 +12,7 @@ public class boxOpen : MonoBehaviour
 
     public Transform cameraTransform;
     public float cameraStepForward = 0.1f;
+    public GameObject prize;
 
     private int clickCount = 0;
     private Vector3 originalPosition;
@@ -18,6 +20,7 @@ public class boxOpen : MonoBehaviour
 
     void Start()
     {
+        prize.gameObject.SetActive(false);
         originalPosition = transform.position;
     }
 
@@ -69,7 +72,8 @@ public class boxOpen : MonoBehaviour
 
 
         Destroy(gameObject, 1f);
-
+        //do something here
+        prize.gameObject.SetActive(true);
         Debug.Log("Box opened!");
     }
 }
